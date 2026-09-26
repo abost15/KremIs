@@ -1,8 +1,8 @@
-"""Byneset South hole 9: replace the misplaced tee boxes with the L-shaped tee
-complex from the club's hole diagram (shape traced on the aerial image, placed
-in line with the start of the fairway as set by the user), cut it into the
-rough/hay, remove lidar trees the aerial image and diagram show as open grass,
-and move the tee markers, hole sign and tee camera.  Run with Blender 5.2:
+"""Byneset South hole 9: replace the misplaced tee box with the real tee
+complex (OpenStreetMap way 1270691543, 2024, which matches the aerial image),
+cut it into the terrain, remove lidar trees the aerial image and the club
+diagram show as open grass, and move the tee markers, hole sign and tee camera
+so they aim along the line of play into the middle of the fairway.  Run with Blender 5.2:
     blender -b --python fix_tee.py -- in.blend out.blend out_meta.json
 """
 import bpy, bmesh, json, math, sys
@@ -69,27 +69,25 @@ def grid_in(poly, step, margin, holes=()):
     return g
 
 # ---------------------------------------------------------------- tee complex outline
-# Traced on the aerial image registered to the model (bunker fit, ~1.5 m) and
-# checked against the club diagram: an arm pointing up the hole with a foot
-# running west along the tree line.
-CTRL = [(-6, 17), (-4.5, 20), (-1, 21.5), (3, 21), (6, 19), (7.5, 15), (7.5, 5), (7.3, -6),
-        (6.5, -13), (4.5, -16.5), (0, -17.5), (-10, -18), (-20, -18.5), (-27, -17.5),
-        (-30.5, -15), (-31, -11), (-29, -8), (-24, -6.8), (-14, -6.3), (-8.5, -5),
-        (-6.5, -2.5), (-6.5, 5), (-6.5, 12)]
-# Placement set by the user on the model (course knowledge): the whole complex
-# 44.5 m west of the traced position, so the tee lines up with the start of
-# the fairway.  The black L the user drew is the centre line of arm and foot.
-SHIFT = np.array([-44.5, -0.3])
-CTRL = [np.array(p) + SHIFT for p in CTRL]
-TEE = resample(chaikin(CTRL, 3), 1.2)
+# OSM way 1270691543 (golf=tee) in model coordinates (UTM33 -> model: origin
+# geo_origin_utm33, +Y at grid bearing 36.9 deg; checked against the six OSM
+# bunkers, max 1.1 m).  The arm leans ~11 deg left of the tee->pin line,
+# towards the fairway.  Corners are rounded slightly (<0.5 m).
+OSM_TEE = [(-4.8, -7.4), (-28.0, -12.5), (-23.4, -24.8), (1.6, -16.4), (7.9, -11.5), (8.9, -6.3),
+           (7.5, 2.4), (4.1, 20.1), (-6.1, 17.6), (-1.8, -4.3), (-3.0, -6.5)]
+TEE = resample(chaikin(resample(np.array(OSM_TEE, float), 1.0), 3), 1.2)
 area = 0.5 * np.sum(TEE[:, 0] * np.roll(TEE[:, 1], -1) - np.roll(TEE[:, 0], -1) * TEE[:, 1])
 if area < 0:
     TEE = TEE[::-1]
 print('tee complex area m2', round(abs(area), 1))
 
-YELLOW = np.array([1.8, -9.5]) + SHIFT   # back tee  (club 265 m)
-RED = np.array([-1.0, 5.5]) + SHIFT      # front tee (club 250 m), 15 m up the arm
-FAIRWAY_AIM = np.array([-28.5, 128.0])   # middle of the fairway, along the line of play
+# markers on the arm axis: yellow (back, club 265 m) in the corner, red (club
+# 250 m) 15 m further up the arm; both aim at the middle of the fairway
+ARM_A = np.array([3.55, -5.3]); ARM_B = np.array([-1.0, 18.85])
+ARM_DIR = (ARM_B - ARM_A) / np.linalg.norm(ARM_B - ARM_A)
+YELLOW = ARM_A - 3.0 * ARM_DIR
+RED = YELLOW + 15.0 * ARM_DIR
+FAIRWAY_AIM = np.array([-28.5, 128.0])
 
 # ---------------------------------------------------------------- terrain samples
 rough = obj['SURF_Rough']; teeo = obj['SURF_Tee']; hay = obj['SURF_Hay']
@@ -114,11 +112,11 @@ for isl in islands(bt):
     vs = {v for f in isl for v in f.verts}
     xy = np.array([(v.co.x, v.co.y) for v in vs])
     c = xy.mean(0)
-    if np.hypot(*(c - [-2.3, 7.15])) < 3 or np.hypot(*(c - [30.71, -25.3])) < 3:
+    if np.hypot(*(c - [-2.3, 7.15])) < 3:   # the misplaced hole-9 box; the tee at (30.7,-25.3) is another hole's (OSM 1270691579)
         old_tee_islands.append(isl)
         lo, hi = xy.min(0), xy.max(0)
         old_tee_polys.append(np.array([[lo[0], lo[1]], [hi[0], lo[1]], [hi[0], hi[1]], [lo[0], hi[1]]]))
-assert len(old_tee_islands) == 2, len(old_tee_islands)
+assert len(old_tee_islands) == 1, len(old_tee_islands)
 
 # natural-ground samples: rough verts not on the old tee banks + old tee platforms
 rv = np.array([v.co[:] for v in rough.data.vertices] + [v.co[:] for v in hay.data.vertices])
@@ -211,7 +209,7 @@ vn_old = {k: np.mean(v, 0) for k, v in vn_old.items()}
 vxy = np.array([v.co[:2] for v in bm.verts])
 
 BUF = 4.0
-regions = [TEE, old_tee_polys[0], old_tee_polys[1]]
+regions = [TEE] + old_tee_polys
 region_verts = near_any(regions, vxy, BUF)
 old_hole = near_any(old_tee_polys, vxy, 0.3)
 pre_boundary = {v.index for v in bm.verts if v.is_boundary}
@@ -386,7 +384,7 @@ kill = set()
 bmi = islands(bm)
 for isl in bmi:
     xy = np.array([(v.co.x, v.co.y) for f in isl for v in f.verts]); c = xy.mean(0)
-    if np.hypot(*(c - [-2.3, 7.15])) < 3 or np.hypot(*(c - [30.71, -25.3])) < 3:
+    if np.hypot(*(c - [-2.3, 7.15])) < 3:
         kill.update(isl)
 # colours of the old hole-9 tee platforms, reused (tiled) on the new one
 old_cols = [tuple(l[colt]) for f in kill for l in f.loops]
@@ -480,7 +478,7 @@ for colr, c in (('yellow', YELLOW), ('red', RED)):
 sign = [o for o in obj if o.name.startswith('PROP_Sign')]
 allv = np.vstack([[v.co[:] for v in o.data.vertices] for o in sign])
 base = np.array([allv[:, 0].mean(), allv[:, 1].mean(), allv[:, 2].min()])
-sp = np.array([9.6, -11.5]) + SHIFT
+sp = np.array([11.5, -8.0])
 gz = zat(*sp)
 for o in sign:
     move_mesh(o, tuple(base), (sp[0], sp[1], gz), 0.0)
