@@ -1,0 +1,993 @@
+{
+ "byneset_north_01": {
+  "hole": "byneset_north_01",
+  "green_iou": 0.99,
+  "green_flat_std": 0.1293,
+  "green_area": 697.3,
+  "pin_osm_dist": 0.0,
+  "model_tees": [
+   {
+    "c": [
+     0.6,
+     73.61
+    ],
+    "area": 172.7,
+    "iou": 1.0,
+    "osm": "929254183",
+    "osm_area": 173.0
+   },
+   {
+    "c": [
+     2.08,
+     10.16
+    ],
+    "area": 325.6,
+    "iou": 1.0,
+    "osm": "929254182",
+    "osm_area": 326.0
+   }
+  ],
+  "osm_tees_unmatched": [],
+  "bunkers_model": 6,
+  "bunker_match_med": 0.5,
+  "bunker_unmatched_gt3m": 0
+ },
+ "byneset_north_02": {
+  "hole": "byneset_north_02",
+  "green_iou": 1.0,
+  "green_flat_std": 0.0803,
+  "green_area": 663.7,
+  "pin_osm_dist": 411.7,
+  "model_tees": [
+   {
+    "c": [
+     -12.2,
+     42.27
+    ],
+    "area": 162.1,
+    "iou": 1.0,
+    "osm": "929840908",
+    "osm_area": 163.0
+   },
+   {
+    "c": [
+     1.73,
+     10.59
+    ],
+    "area": 287.6,
+    "iou": 1.0,
+    "osm": "929840907",
+    "osm_area": 288.0
+   }
+  ],
+  "osm_tees_unmatched": [],
+  "bunkers_model": 6,
+  "bunker_match_med": 1.8,
+  "bunker_unmatched_gt3m": 2
+ },
+ "byneset_north_03": {
+  "hole": "byneset_north_03",
+  "green_iou": 1.0,
+  "green_flat_std": 0.0905,
+  "green_area": 642.1,
+  "pin_osm_dist": 465.4,
+  "model_tees": [
+   {
+    "c": [
+     1.14,
+     11.33
+    ],
+    "area": 352.5,
+    "iou": 1.0,
+    "osm": "930368318",
+    "osm_area": 353.0
+   },
+   {
+    "c": [
+     4.47,
+     57.8
+    ],
+    "area": 171.6,
+    "iou": 1.0,
+    "osm": "930368319",
+    "osm_area": 172.0
+   }
+  ],
+  "osm_tees_unmatched": [],
+  "bunkers_model": 4,
+  "bunker_match_med": 0.5,
+  "bunker_unmatched_gt3m": 0
+ },
+ "byneset_north_04": {
+  "hole": "byneset_north_04",
+  "green_iou": 1.0,
+  "green_flat_std": 0.0999,
+  "green_area": 732.6,
+  "pin_osm_dist": 776.8,
+  "model_tees": [
+   {
+    "c": [
+     -17.52,
+     100.42
+    ],
+    "area": 73.6,
+    "iou": 0.99,
+    "osm": "930368327",
+    "osm_area": 74.0
+   },
+   {
+    "c": [
+     -12.11,
+     69.85
+    ],
+    "area": 276.5,
+    "iou": 1.0,
+    "osm": "930368326",
+    "osm_area": 277.0
+   },
+   {
+    "c": [
+     -5.04,
+     31.73
+    ],
+    "area": 53.4,
+    "iou": 0.99,
+    "osm": "930368325",
+    "osm_area": 54.0
+   },
+   {
+    "c": [
+     0.4,
+     0.07
+    ],
+    "area": 50.8,
+    "iou": 0.99,
+    "osm": "930368324",
+    "osm_area": 51.0
+   }
+  ],
+  "osm_tees_unmatched": [],
+  "bunkers_model": 3,
+  "bunker_match_med": 0.2,
+  "bunker_unmatched_gt3m": 0
+ },
+ "byneset_north_05": {
+  "hole": "byneset_north_05",
+  "green_iou": 1.0,
+  "green_flat_std": 0.1113,
+  "green_area": 547.4,
+  "pin_osm_dist": null,
+  "model_tees": [
+   {
+    "c": [
+     0.46,
+     0.6
+    ],
+    "area": 52.0,
+    "iou": 0.99,
+    "osm": "930368331",
+    "osm_area": 53.0
+   },
+   {
+    "c": [
+     9.33,
+     34.17
+    ],
+    "area": 269.4,
+    "iou": 1.0,
+    "osm": "930368332",
+    "osm_area": 270.0
+   }
+  ],
+  "osm_tees_unmatched": [
+   {
+    "id": "929827541",
+    "c": [
+     -13.0,
+     -48.9
+    ],
+    "area": 414.0,
+    "ts": "2021-04-12"
+   }
+  ],
+  "bunkers_model": 5,
+  "bunker_match_med": 0.2,
+  "bunker_unmatched_gt3m": 0
+ },
+ "byneset_north_06": {
+  "hole": "byneset_north_06",
+  "green_iou": 1.0,
+  "green_flat_std": 0.0666,
+  "green_area": 459.2,
+  "pin_osm_dist": null,
+  "model_tees": [
+   {
+    "c": [
+     -2.06,
+     28.6
+    ],
+    "area": 577.5,
+    "iou": 1.0,
+    "osm": "930368339",
+    "osm_area": 577.0
+   }
+  ],
+  "osm_tees_unmatched": [],
+  "bunkers_model": 4,
+  "bunker_match_med": 0.2,
+  "bunker_unmatched_gt3m": 0
+ },
+ "byneset_north_07": {
+  "hole": "byneset_north_07",
+  "green_iou": 0.99,
+  "green_flat_std": 0.1632,
+  "green_area": 510.6,
+  "pin_osm_dist": null,
+  "model_tees": [
+   {
+    "c": [
+     -0.46,
+     0.5
+    ],
+    "area": 54.5,
+    "iou": 0.99,
+    "osm": "930375184",
+    "osm_area": 55.0
+   }
+  ],
+  "osm_tees_unmatched": [],
+  "bunkers_model": 7,
+  "bunker_match_med": 0.2,
+  "bunker_unmatched_gt3m": 0
+ },
+ "byneset_north_08": {
+  "hole": "byneset_north_08",
+  "green_iou": 1.0,
+  "green_flat_std": 0.0861,
+  "green_area": 630.9,
+  "pin_osm_dist": 245.8,
+  "model_tees": [
+   {
+    "c": [
+     0.98,
+     42.51
+    ],
+    "area": 622.5,
+    "iou": 1.0,
+    "osm": "930377666",
+    "osm_area": 623.0
+   },
+   {
+    "c": [
+     0.46,
+     0.9
+    ],
+    "area": 58.0,
+    "iou": 0.99,
+    "osm": "930377664",
+    "osm_area": 58.0
+   },
+   {
+    "c": [
+     14.72,
+     -16.65
+    ],
+    "area": 57.7,
+    "iou": 0.99,
+    "osm": "930377665",
+    "osm_area": 58.0
+   }
+  ],
+  "osm_tees_unmatched": [
+   {
+    "id": "929254191",
+    "c": [
+     9.3,
+     -72.0
+    ],
+    "area": 397.0,
+    "ts": "2021-04-11"
+   }
+  ],
+  "bunkers_model": 3,
+  "bunker_match_med": 0.3,
+  "bunker_unmatched_gt3m": 0
+ },
+ "byneset_north_09": {
+  "hole": "byneset_north_09",
+  "green_iou": 1.0,
+  "green_flat_std": 0.0802,
+  "green_area": 602.1,
+  "pin_osm_dist": 0.0,
+  "model_tees": [
+   {
+    "c": [
+     -15.03,
+     50.64
+    ],
+    "area": 120.4,
+    "iou": 1.0,
+    "osm": "930560391",
+    "osm_area": 121.0
+   },
+   {
+    "c": [
+     -5.96,
+     25.88
+    ],
+    "area": 274.2,
+    "iou": 1.0,
+    "osm": "930560390",
+    "osm_area": 275.0
+   },
+   {
+    "c": [
+     -0.09,
+     -0.21
+    ],
+    "area": 22.9,
+    "iou": 0.98,
+    "osm": "930560393",
+    "osm_area": 23.0
+   }
+  ],
+  "osm_tees_unmatched": [],
+  "bunkers_model": 4,
+  "bunker_match_med": 0.2,
+  "bunker_unmatched_gt3m": 0
+ },
+ "byneset_north_10": {
+  "hole": "byneset_north_10",
+  "green_iou": 0.99,
+  "green_flat_std": 0.1008,
+  "green_area": 540.9,
+  "pin_osm_dist": 366.2,
+  "model_tees": [
+   {
+    "c": [
+     -11.37,
+     10.74
+    ],
+    "area": 346.1,
+    "iou": 1.0,
+    "osm": "930560397",
+    "osm_area": 346.0
+   }
+  ],
+  "osm_tees_unmatched": [],
+  "bunkers_model": 8,
+  "bunker_match_med": 0.1,
+  "bunker_unmatched_gt3m": 0
+ },
+ "byneset_north_11": {
+  "hole": "byneset_north_11",
+  "green_iou": 1.0,
+  "green_flat_std": 0.0905,
+  "green_area": 502.0,
+  "pin_osm_dist": 530.2,
+  "model_tees": [
+   {
+    "c": [
+     -0.01,
+     0.09
+    ],
+    "area": 57.7,
+    "iou": 0.99,
+    "osm": "930377665",
+    "osm_area": 58.0
+   },
+   {
+    "c": [
+     11.1,
+     -44.68
+    ],
+    "area": 179.5,
+    "iou": 0.29,
+    "osm": "930377666",
+    "osm_area": 623.0
+   },
+   {
+    "c": [
+     14.99,
+     53.41
+    ],
+    "area": 396.3,
+    "iou": 1.0,
+    "osm": "929254191",
+    "osm_area": 397.0
+   },
+   {
+    "c": [
+     8.64,
+     74.16
+    ],
+    "area": 145.7,
+    "iou": 1.0,
+    "osm": "929254192",
+    "osm_area": 146.0
+   },
+   {
+    "c": [
+     11.24,
+     -19.57
+    ],
+    "area": 58.0,
+    "iou": 0.99,
+    "osm": "930377664",
+    "osm_area": 58.0
+   }
+  ],
+  "osm_tees_unmatched": [],
+  "bunkers_model": 4,
+  "bunker_match_med": 0.1,
+  "bunker_unmatched_gt3m": 0
+ },
+ "byneset_north_12": {
+  "hole": "byneset_north_12",
+  "green_iou": 0.99,
+  "green_flat_std": 0.0965,
+  "green_area": 722.8,
+  "pin_osm_dist": 235.9,
+  "model_tees": [
+   {
+    "c": [
+     -2.8,
+     56.64
+    ],
+    "area": 180.3,
+    "iou": 1.0,
+    "osm": "929265441",
+    "osm_area": 181.0
+   },
+   {
+    "c": [
+     1.89,
+     9.22
+    ],
+    "area": 329.9,
+    "iou": 1.0,
+    "osm": "929265440",
+    "osm_area": 330.0
+   }
+  ],
+  "osm_tees_unmatched": [],
+  "bunkers_model": 9,
+  "bunker_match_med": 0.9,
+  "bunker_unmatched_gt3m": 2
+ },
+ "byneset_north_13": {
+  "hole": "byneset_north_13",
+  "green_iou": 1.0,
+  "green_flat_std": 0.0868,
+  "green_area": 663.2,
+  "pin_osm_dist": 347.4,
+  "model_tees": [
+   {
+    "c": [
+     -3.07,
+     5.67
+    ],
+    "area": 334.6,
+    "iou": 1.0,
+    "osm": "929265444",
+    "osm_area": 335.0
+   },
+   {
+    "c": [
+     -4.09,
+     35.26
+    ],
+    "area": 162.0,
+    "iou": 1.0,
+    "osm": "929265445",
+    "osm_area": 162.0
+   }
+  ],
+  "osm_tees_unmatched": [],
+  "bunkers_model": 12,
+  "bunker_match_med": 0.6,
+  "bunker_unmatched_gt3m": 0
+ },
+ "byneset_north_14": {
+  "hole": "byneset_north_14",
+  "green_iou": 1.0,
+  "green_flat_std": 0.0817,
+  "green_area": 588.8,
+  "pin_osm_dist": 691.7,
+  "model_tees": [
+   {
+    "c": [
+     0.7,
+     2.03
+    ],
+    "area": 110.2,
+    "iou": 1.0,
+    "osm": "929267766",
+    "osm_area": 111.0
+   },
+   {
+    "c": [
+     4.32,
+     61.74
+    ],
+    "area": 165.6,
+    "iou": 1.0,
+    "osm": "929267768",
+    "osm_area": 166.0
+   },
+   {
+    "c": [
+     8.02,
+     36.15
+    ],
+    "area": 308.1,
+    "iou": 1.0,
+    "osm": "929267767",
+    "osm_area": 308.0
+   }
+  ],
+  "osm_tees_unmatched": [],
+  "bunkers_model": 5,
+  "bunker_match_med": 0.3,
+  "bunker_unmatched_gt3m": 0
+ },
+ "byneset_north_15": {
+  "hole": "byneset_north_15",
+  "green_iou": 0.99,
+  "green_flat_std": 0.0865,
+  "green_area": 662.6,
+  "pin_osm_dist": 458.0,
+  "model_tees": [
+   {
+    "c": [
+     2.08,
+     15.37
+    ],
+    "area": 413.1,
+    "iou": 1.0,
+    "osm": "929827541",
+    "osm_area": 414.0
+   },
+   {
+    "c": [
+     1.57,
+     -37.81
+    ],
+    "area": 52.0,
+    "iou": 0.99,
+    "osm": "930368331",
+    "osm_area": 53.0
+   },
+   {
+    "c": [
+     6.92,
+     66.56
+    ],
+    "area": 190.3,
+    "iou": 1.0,
+    "osm": "929827542",
+    "osm_area": 191.0
+   }
+  ],
+  "osm_tees_unmatched": [
+   {
+    "id": "930368332",
+    "c": [
+     2.1,
+     -72.2
+    ],
+    "area": 270.0,
+    "ts": "2021-04-13"
+   }
+  ],
+  "bunkers_model": 7,
+  "bunker_match_med": 0.3,
+  "bunker_unmatched_gt3m": 0
+ },
+ "byneset_north_16": {
+  "hole": "byneset_north_16",
+  "green_iou": 1.0,
+  "green_flat_std": 0.1084,
+  "green_area": 729.8,
+  "pin_osm_dist": 179.9,
+  "model_tees": [
+   {
+    "c": [
+     -11.08,
+     80.82
+    ],
+    "area": 149.5,
+    "iou": 1.0,
+    "osm": "929840899",
+    "osm_area": 150.0
+   },
+   {
+    "c": [
+     -0.52,
+     55.73
+    ],
+    "area": 202.7,
+    "iou": 1.0,
+    "osm": "929840898",
+    "osm_area": 203.0
+   },
+   {
+    "c": [
+     1.28,
+     5.27
+    ],
+    "area": 268.8,
+    "iou": 1.0,
+    "osm": "929840897",
+    "osm_area": 269.0
+   }
+  ],
+  "osm_tees_unmatched": [],
+  "bunkers_model": 11,
+  "bunker_match_med": 0.5,
+  "bunker_unmatched_gt3m": 1
+ },
+ "byneset_north_17": {
+  "hole": "byneset_north_17",
+  "green_iou": 0.98,
+  "green_flat_std": 0.1116,
+  "green_area": 642.5,
+  "pin_osm_dist": 436.8,
+  "model_tees": [
+   {
+    "c": [
+     0.18,
+     0.12
+    ],
+    "area": 112.2,
+    "iou": 1.0,
+    "osm": "929254185",
+    "osm_area": 112.0
+   },
+   {
+    "c": [
+     28.48,
+     41.74
+    ],
+    "area": 292.5,
+    "iou": 1.0,
+    "osm": "929254186",
+    "osm_area": 293.0
+   },
+   {
+    "c": [
+     45.93,
+     65.92
+    ],
+    "area": 181.0,
+    "iou": 1.0,
+    "osm": "929254187",
+    "osm_area": 181.0
+   }
+  ],
+  "osm_tees_unmatched": [],
+  "bunkers_model": 8,
+  "bunker_match_med": 0.2,
+  "bunker_unmatched_gt3m": 0
+ },
+ "byneset_north_18": {
+  "hole": "byneset_north_18",
+  "green_iou": 0.99,
+  "green_flat_std": 0.1064,
+  "green_area": 627.4,
+  "pin_osm_dist": 0.0,
+  "model_tees": [
+   {
+    "c": [
+     -0.24,
+     0.62
+    ],
+    "area": 61.9,
+    "iou": 0.99,
+    "osm": "930560407",
+    "osm_area": 62.0
+   },
+   {
+    "c": [
+     21.92,
+     35.08
+    ],
+    "area": 264.5,
+    "iou": 1.0,
+    "osm": "930560408",
+    "osm_area": 265.0
+   },
+   {
+    "c": [
+     54.45,
+     82.22
+    ],
+    "area": 164.3,
+    "iou": 1.0,
+    "osm": "930560409",
+    "osm_area": 165.0
+   }
+  ],
+  "osm_tees_unmatched": [],
+  "bunkers_model": 14,
+  "bunker_match_med": 0.1,
+  "bunker_unmatched_gt3m": 0
+ },
+ "byneset_south_01": {
+  "hole": "byneset_south_01",
+  "green_iou": 0.98,
+  "green_flat_std": 0.0802,
+  "green_area": 515.5,
+  "pin_osm_dist": 0.0,
+  "model_tees": [
+   {
+    "c": [
+     -0.43,
+     0.33
+    ],
+    "area": 156.3,
+    "iou": 0,
+    "osm": null,
+    "osm_area": null
+   },
+   {
+    "c": [
+     0.85,
+     33.79
+    ],
+    "area": 8.1,
+    "iou": 0,
+    "osm": null,
+    "osm_area": null
+   }
+  ],
+  "osm_tees_unmatched": [],
+  "bunkers_model": 7,
+  "bunker_match_med": 0.8,
+  "bunker_unmatched_gt3m": 0
+ },
+ "byneset_south_02": {
+  "hole": "byneset_south_02",
+  "green_iou": 0.97,
+  "green_flat_std": 0.1002,
+  "green_area": 463.1,
+  "pin_osm_dist": 0.0,
+  "model_tees": [
+   {
+    "c": [
+     15.63,
+     -37.67
+    ],
+    "area": 594.1,
+    "iou": 0.92,
+    "osm": "1270691543",
+    "osm_area": 644.0
+   },
+   {
+    "c": [
+     1.31,
+     1.59
+    ],
+    "area": 169.9,
+    "iou": 0.66,
+    "osm": "1270691579",
+    "osm_area": 125.0
+   },
+   {
+    "c": [
+     -0.57,
+     22.97
+    ],
+    "area": 76.4,
+    "iou": 0,
+    "osm": null,
+    "osm_area": null
+   }
+  ],
+  "osm_tees_unmatched": [],
+  "bunkers_model": 3,
+  "bunker_match_med": 0.9,
+  "bunker_unmatched_gt3m": 0
+ },
+ "byneset_south_03": {
+  "hole": "byneset_south_03",
+  "green_iou": 0.98,
+  "green_flat_std": 0.0849,
+  "green_area": 594.4,
+  "pin_osm_dist": 0.0,
+  "model_tees": [
+   {
+    "c": [
+     -0.38,
+     9.48
+    ],
+    "area": 266.5,
+    "iou": 0,
+    "osm": null,
+    "osm_area": null
+   }
+  ],
+  "osm_tees_unmatched": [],
+  "bunkers_model": 1,
+  "bunker_match_med": 1.2,
+  "bunker_unmatched_gt3m": 0
+ },
+ "byneset_south_04": {
+  "hole": "byneset_south_04",
+  "green_iou": 0.98,
+  "green_flat_std": 0.1449,
+  "green_area": 476.3,
+  "pin_osm_dist": 0.0,
+  "model_tees": [
+   {
+    "c": [
+     0.37,
+     0.37
+    ],
+    "area": 145.6,
+    "iou": 0,
+    "osm": null,
+    "osm_area": null
+   },
+   {
+    "c": [
+     28.47,
+     17.92
+    ],
+    "area": 121.5,
+    "iou": 0,
+    "osm": null,
+    "osm_area": null
+   }
+  ],
+  "osm_tees_unmatched": [],
+  "bunkers_model": 3,
+  "bunker_match_med": 0.8,
+  "bunker_unmatched_gt3m": 0
+ },
+ "byneset_south_05": {
+  "hole": "byneset_south_05",
+  "green_iou": 0.98,
+  "green_flat_std": 0.094,
+  "green_area": 425.5,
+  "pin_osm_dist": 0.0,
+  "model_tees": [
+   {
+    "c": [
+     0.12,
+     -0.21
+    ],
+    "area": 111.7,
+    "iou": 0.22,
+    "osm": "1270691577",
+    "osm_area": 275.0
+   },
+   {
+    "c": [
+     -1.32,
+     31.96
+    ],
+    "area": 64.8,
+    "iou": 0.16,
+    "osm": "1270691576",
+    "osm_area": 119.0
+   }
+  ],
+  "osm_tees_unmatched": [],
+  "bunkers_model": 3,
+  "bunker_match_med": 0.9,
+  "bunker_unmatched_gt3m": 0
+ },
+ "byneset_south_06": {
+  "hole": "byneset_south_06",
+  "green_iou": 0.65,
+  "green_flat_std": 0.0,
+  "green_area": 321.2,
+  "pin_osm_dist": 0.0,
+  "model_tees": [
+   {
+    "c": [
+     -1.38,
+     6.3
+    ],
+    "area": 146.4,
+    "iou": 0.19,
+    "osm": "1270691543",
+    "osm_area": 644.0
+   }
+  ],
+  "osm_tees_unmatched": [
+   {
+    "id": "1270691579",
+    "c": [
+     -1.3,
+     -41.7
+    ],
+    "area": 125.0,
+    "ts": "2024-04-07"
+   }
+  ],
+  "bunkers_model": 5,
+  "bunker_match_med": 0.9,
+  "bunker_unmatched_gt3m": 1
+ },
+ "byneset_south_07": {
+  "hole": "byneset_south_07",
+  "green_iou": 0.98,
+  "green_flat_std": 0.0,
+  "green_area": 455.7,
+  "pin_osm_dist": 0.0,
+  "model_tees": [
+   {
+    "c": [
+     0.89,
+     12.11
+    ],
+    "area": 119.7,
+    "iou": 0.33,
+    "osm": "1270339631",
+    "osm_area": 333.0
+   }
+  ],
+  "osm_tees_unmatched": [],
+  "bunkers_model": 4,
+  "bunker_match_med": 0.8,
+  "bunker_unmatched_gt3m": 0
+ },
+ "byneset_south_08": {
+  "hole": "byneset_south_08",
+  "green_iou": 0.7,
+  "green_flat_std": 0.0,
+  "green_area": 349.6,
+  "pin_osm_dist": 0.0,
+  "model_tees": [
+   {
+    "c": [
+     -0.55,
+     6.06
+    ],
+    "area": 119.7,
+    "iou": 0.67,
+    "osm": "1270339625",
+    "osm_area": 178.0
+   }
+  ],
+  "osm_tees_unmatched": [],
+  "bunkers_model": 3,
+  "bunker_match_med": 0.9,
+  "bunker_unmatched_gt3m": 0
+ },
+ "byneset_south_09": {
+  "hole": "byneset_south_09",
+  "green_iou": 0.98,
+  "green_flat_std": 0.0,
+  "green_area": 540.5,
+  "pin_osm_dist": 0.0,
+  "model_tees": [
+   {
+    "c": [
+     -2.15,
+     7.24
+    ],
+    "area": 127.7,
+    "iou": 0.13,
+    "osm": "1270691543",
+    "osm_area": 644.0
+   },
+   {
+    "c": [
+     30.81,
+     -25.27
+    ],
+    "area": 124.7,
+    "iou": 1.0,
+    "osm": "1270691579",
+    "osm_area": 125.0
+   }
+  ],
+  "osm_tees_unmatched": [],
+  "bunkers_model": 6,
+  "bunker_match_med": 0.8,
+  "bunker_unmatched_gt3m": 0
+ }
+}
