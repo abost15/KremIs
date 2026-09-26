@@ -6,11 +6,12 @@ registrert mot modellen via bunkerne (avvik ca. 1,5 m).
 ## Endret
 - **Teested:** de to gamle teeboksene er fjernet (den ene lå 30 m til høyre for
   hullet), og hullene i roughen er fylt igjen. Nytt L-formet teested er lagt inn
-  (ca. 775 m²): armen peker opp mot fairway, og foten går vestover langs
-  trerekka, slik det er på tegningen og satellittbildet. Høyden følger terrenget,
-  og kanten er skjøtt sømløst mot roughen.
-- **Teemarkører:** gul (bak) står på (1,8, −9,5), rød på (−1,0, 5,5). De står
-  15 m fra hverandre, som klubbens lengder 265/250 m, og er vendt mot spillelinja.
+  (ca. 765 m²). Foten går vestover langs trerekka. Armen er bøyd 13° til venstre
+  for linja fra tee til pin, slik at den peker langs spillelinja inn mot midten
+  av fairway. Høyden følger terrenget, og kanten er skjøtt sømløst mot roughen.
+- **Teemarkører:** gul (bak) står på (1,8, −9,5), rød på (−4,5, 4,8), opp langs
+  den bøyde armen. De står 15 m fra hverandre, som klubbens lengder 265/250 m,
+  og er rettet langs spillelinja mot midten av fairway.
 - **Trær:** 14 lidar-trær er fjernet (088, 089, 091–102). De står på åpent
   gress både på satellittbildet og på tegningen, og tre av dem sto midt i det
   nye teestedet. Innbakt skygge fra dem i roughens vertex-farger er fjernet.

@@ -75,6 +75,20 @@ CTRL = [(-6, 17), (-4.5, 20), (-1, 21.5), (3, 21), (6, 19), (7.5, 15), (7.5, 5),
         (6.5, -13), (4.5, -16.5), (0, -17.5), (-10, -18), (-20, -18.5), (-27, -17.5),
         (-30.5, -15), (-31, -11), (-29, -8), (-24, -6.8), (-14, -6.3), (-8.5, -5),
         (-6.5, -2.5), (-6.5, 5), (-6.5, 12)]
+# The arm of the tee does not point at the green but along the line of play
+# into the middle of the fairway: 13 deg left of the tee->pin line (marked by
+# the user on the club diagram).  Bend the arm about the corner by the yellow
+# tee, blending from 0 deg along the foot to the full angle up the arm, so the
+# foot stays along the tree line and the complex gets a slight curve.
+AIM_DEG = 13.0
+PIVOT = np.array([0.5, -10.0])
+def bend(p):
+    p = np.asarray(p, float)
+    w = np.clip((p[1] + 8.0) / 13.0, 0, 1); w = w * w * (3 - 2 * w)
+    a = math.radians(AIM_DEG) * w; c, s_ = math.cos(a), math.sin(a)
+    d = p - PIVOT
+    return PIVOT + np.array([c * d[0] - s_ * d[1], s_ * d[0] + c * d[1]])
+CTRL = [bend(p) for p in CTRL]
 TEE = resample(chaikin(CTRL, 3), 1.2)
 area = 0.5 * np.sum(TEE[:, 0] * np.roll(TEE[:, 1], -1) - np.roll(TEE[:, 0], -1) * TEE[:, 1])
 if area < 0:
@@ -82,7 +96,7 @@ if area < 0:
 print('tee complex area m2', round(abs(area), 1))
 
 YELLOW = np.array([1.8, -9.5])   # back tee  (club 265 m)
-RED = np.array([-1.0, 5.5])      # front tee (club 250 m)
+RED = bend([-1.0, 5.5])          # front tee (club 250 m), 15 m up the bent arm
 
 # ---------------------------------------------------------------- terrain samples
 rough = obj['SURF_Rough']; teeo = obj['SURF_Tee']
@@ -416,9 +430,10 @@ print('grass tufts removed (faces)', len(drop))
 bmesh.ops.delete(bm, geom=drop, context='FACES'); bm.to_mesh(gt.data); bm.free()
 
 # ---------------------------------------------------------------- markers, sign, camera
-hole_line = [(0.0, 0.0), (-32.99, 101.4)]
+# aim along the line of play into the fairway (not at hole_line[1])
+AIM = np.array([-math.sin(math.radians(AIM_DEG + 0.8)), math.cos(math.radians(AIM_DEG + 0.8))])
 def aim_from(p):
-    a = np.array(hole_line[1]) - p; return a / np.linalg.norm(a)
+    return AIM
 
 def move_mesh(o, frm, to, ang):
     # rotate about frm (z axis) by ang, then translate to 'to'
