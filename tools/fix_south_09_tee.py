@@ -1,7 +1,8 @@
 """Byneset South hole 9: replace the misplaced tee boxes with the L-shaped tee
-complex from the club's hole diagram (outline traced on the aerial image),
-remove lidar trees the aerial image and diagram show as open grass, and move
-the tee markers, hole sign and tee camera.  Run with Blender 5.2:
+complex from the club's hole diagram (shape traced on the aerial image, placed
+in line with the start of the fairway as set by the user), cut it into the
+rough/hay, remove lidar trees the aerial image and diagram show as open grass,
+and move the tee markers, hole sign and tee camera.  Run with Blender 5.2:
     blender -b --python fix_tee.py -- in.blend out.blend out_meta.json
 """
 import bpy, bmesh, json, math, sys
@@ -75,31 +76,23 @@ CTRL = [(-6, 17), (-4.5, 20), (-1, 21.5), (3, 21), (6, 19), (7.5, 15), (7.5, 5),
         (6.5, -13), (4.5, -16.5), (0, -17.5), (-10, -18), (-20, -18.5), (-27, -17.5),
         (-30.5, -15), (-31, -11), (-29, -8), (-24, -6.8), (-14, -6.3), (-8.5, -5),
         (-6.5, -2.5), (-6.5, 5), (-6.5, 12)]
-# The arm of the tee does not point at the green but along the line of play
-# into the middle of the fairway: 13 deg left of the tee->pin line (marked by
-# the user on the club diagram).  Bend the arm about the corner by the yellow
-# tee, blending from 0 deg along the foot to the full angle up the arm, so the
-# foot stays along the tree line and the complex gets a slight curve.
-AIM_DEG = 13.0
-PIVOT = np.array([0.5, -10.0])
-def bend(p):
-    p = np.asarray(p, float)
-    w = np.clip((p[1] + 8.0) / 13.0, 0, 1); w = w * w * (3 - 2 * w)
-    a = math.radians(AIM_DEG) * w; c, s_ = math.cos(a), math.sin(a)
-    d = p - PIVOT
-    return PIVOT + np.array([c * d[0] - s_ * d[1], s_ * d[0] + c * d[1]])
-CTRL = [bend(p) for p in CTRL]
+# Placement set by the user on the model (course knowledge): the whole complex
+# 44.5 m west of the traced position, so the tee lines up with the start of
+# the fairway.  The black L the user drew is the centre line of arm and foot.
+SHIFT = np.array([-44.5, -0.3])
+CTRL = [np.array(p) + SHIFT for p in CTRL]
 TEE = resample(chaikin(CTRL, 3), 1.2)
 area = 0.5 * np.sum(TEE[:, 0] * np.roll(TEE[:, 1], -1) - np.roll(TEE[:, 0], -1) * TEE[:, 1])
 if area < 0:
     TEE = TEE[::-1]
 print('tee complex area m2', round(abs(area), 1))
 
-YELLOW = np.array([1.8, -9.5])   # back tee  (club 265 m)
-RED = bend([-1.0, 5.5])          # front tee (club 250 m), 15 m up the bent arm
+YELLOW = np.array([1.8, -9.5]) + SHIFT   # back tee  (club 265 m)
+RED = np.array([-1.0, 5.5]) + SHIFT      # front tee (club 250 m), 15 m up the arm
+FAIRWAY_AIM = np.array([-28.5, 128.0])   # middle of the fairway, along the line of play
 
 # ---------------------------------------------------------------- terrain samples
-rough = obj['SURF_Rough']; teeo = obj['SURF_Tee']
+rough = obj['SURF_Rough']; teeo = obj['SURF_Tee']; hay = obj['SURF_Hay']
 
 def islands(bm):
     bm.faces.ensure_lookup_table(); seen = set(); out = []
@@ -128,7 +121,7 @@ for isl in islands(bt):
 assert len(old_tee_islands) == 2, len(old_tee_islands)
 
 # natural-ground samples: rough verts not on the old tee banks + old tee platforms
-rv = np.array([v.co[:] for v in rough.data.vertices])
+rv = np.array([v.co[:] for v in rough.data.vertices] + [v.co[:] for v in hay.data.vertices])
 tv = np.array([v.co[:] for v in teeo.data.vertices])
 def near_any(polys, xy, d):
     m = np.zeros(len(xy), bool)
@@ -158,13 +151,27 @@ def nrm(g):
 
 # ---------------------------------------------------------------- sanity: other surfaces inside new tee?
 for o in obj:
-    if o.type == 'MESH' and o.name.startswith('SURF_') and o.name not in ('SURF_Rough', 'SURF_Tee', 'SURF_Far'):
+    if o.type == 'MESH' and o.name.startswith('SURF_') and o.name not in ('SURF_Rough', 'SURF_Tee', 'SURF_Far', 'SURF_Hay'):
         v = np.array([x.co[:2] for x in o.data.vertices])
         hit = inside(TEE, v) | (seg_dist(TEE, v) < 4.5)
         if hit.any():
             print('WARNING surface near new tee:', o.name, hit.sum())
 
 # ---------------------------------------------------------------- rebuild rough around tees
+# The new tee sits in the hay (long grass).  Join the hay into the rough and
+# weld the shared seam so both are rebuilt as one surface; split them apart
+# again afterwards (faces keep their material: 0 rough, 1 hay).
+hay_mesh_name = hay.data.name
+hay_cols = list(hay.users_collection)
+hay_props = hay['user_properties'].to_dict() if 'user_properties' in hay else None
+with bpy.context.temp_override(active_object=rough, selected_editable_objects=[rough, hay]):
+    bpy.ops.object.join()
+assert [m.name for m in rough.data.materials] == ['M_Rough', 'M_Hay'], [m.name for m in rough.data.materials]
+_bm = bmesh.new(); _bm.from_mesh(rough.data)
+nv = len(_bm.verts)
+bmesh.ops.remove_doubles(_bm, verts=_bm.verts, dist=1e-3)
+print('hay joined, seam verts welded', nv - len(_bm.verts))
+_bm.to_mesh(rough.data); _bm.free(); rough.data.update()
 me = rough.data
 col_name = 'Col'
 bm = bmesh.new(); bm.from_mesh(me)
@@ -180,6 +187,7 @@ for li, l in enumerate(me.loops):
     vn_old.setdefault(l.vertex_index, []).append(corner_n[li])
 vcol = {}
 for f in bm.faces:
+    if f.material_index != 0: continue
     for l in f.loops:
         vcol.setdefault(l.vert.index, []).append(tuple(l[coll]))
 vcol = {k: np.mean(v, 0) for k, v in vcol.items()}
@@ -351,6 +359,20 @@ for t in GONE:
 for d, c in zip(ca.data, cc): d.color = c
 print('rough corners un-shaded', int((fix < 0.99).sum()))
 
+# split the hay back out of the rough
+hay_me = me.copy(); hay_me.name = hay_mesh_name
+for mesh, keep in ((hay_me, 1), (me, 0)):
+    b = bmesh.new(); b.from_mesh(mesh)
+    bmesh.ops.delete(b, geom=[f for f in b.faces if f.material_index != keep], context='FACES')
+    for f in b.faces: f.material_index = 0
+    b.to_mesh(mesh); b.free()
+    mat = mesh.materials[keep]; mesh.materials.clear(); mesh.materials.append(mat)
+    mesh.update()
+hay = bpy.data.objects.new('SURF_Hay', hay_me)
+for c in hay_cols: c.objects.link(hay)
+if hay_props is not None: hay['user_properties'] = hay_props
+print('hay faces', len(hay_me.polygons), 'rough faces', len(me.polygons))
+
 # ---------------------------------------------------------------- tee surface
 tme = teeo.data
 tcorner = np.array([n.vector[:] for n in tme.corner_normals])
@@ -420,20 +442,22 @@ for o in obj:
 
 # tall-grass tufts on the new tee
 gt = obj['GRASS_Tufts']
+hay_bvh = BVHTree.FromObject(hay, bpy.context.evaluated_depsgraph_get())
 bm = bmesh.new(); bm.from_mesh(gt.data)
 drop = []
 for isl in islands(bm):
     c = np.mean([(v.co.x, v.co.y) for f in isl for v in f.verts], 0)
-    if inside(TEE, c[None])[0] or seg_dist(TEE, c[None])[0] < 1.0:
-        drop += isl
+    if inside(TEE, c[None])[0] or seg_dist(TEE, c[None])[0] < BUF + 1.0:
+        h = hay_bvh.ray_cast(Vector((c[0], c[1], 200)), Vector((0, 0, -1)))
+        if inside(TEE, c[None])[0] or h[0] is None:   # on the tee, or hay converted to rough
+            drop += isl
 print('grass tufts removed (faces)', len(drop))
 bmesh.ops.delete(bm, geom=drop, context='FACES'); bm.to_mesh(gt.data); bm.free()
 
 # ---------------------------------------------------------------- markers, sign, camera
-# aim along the line of play into the fairway (not at hole_line[1])
-AIM = np.array([-math.sin(math.radians(AIM_DEG + 0.8)), math.cos(math.radians(AIM_DEG + 0.8))])
+# aim along the line of play into the middle of the fairway
 def aim_from(p):
-    return AIM
+    a = FAIRWAY_AIM - p; return a / np.linalg.norm(a)
 
 def move_mesh(o, frm, to, ang):
     # rotate about frm (z axis) by ang, then translate to 'to'
@@ -456,7 +480,7 @@ for colr, c in (('yellow', YELLOW), ('red', RED)):
 sign = [o for o in obj if o.name.startswith('PROP_Sign')]
 allv = np.vstack([[v.co[:] for v in o.data.vertices] for o in sign])
 base = np.array([allv[:, 0].mean(), allv[:, 1].mean(), allv[:, 2].min()])
-sp = np.array([9.6, -11.5])
+sp = np.array([9.6, -11.5]) + SHIFT
 gz = zat(*sp)
 for o in sign:
     move_mesh(o, tuple(base), (sp[0], sp[1], gz), 0.0)

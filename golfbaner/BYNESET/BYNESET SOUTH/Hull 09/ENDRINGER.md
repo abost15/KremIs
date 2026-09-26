@@ -1,20 +1,20 @@
 # Byneset South – hull 9: teested rettet
 
-Grunnlag: klubbens hulltegning og satellittbildet `Byneset_Sor_satellitt_ren.jpg`,
-registrert mot modellen via bunkerne (avvik ca. 1,5 m).
-
 ## Endret
 - **Teested:** de to gamle teeboksene er fjernet (den ene lå 30 m til høyre for
   hullet), og hullene i roughen er fylt igjen. Nytt L-formet teested er lagt inn
-  (ca. 765 m²). Foten går vestover langs trerekka. Armen er bøyd 13° til venstre
-  for linja fra tee til pin, slik at den peker langs spillelinja inn mot midten
-  av fairway. Høyden følger terrenget, og kanten er skjøtt sømløst mot roughen.
-- **Teemarkører:** gul (bak) står på (1,8, −9,5), rød på (−4,5, 4,8), opp langs
-  den bøyde armen. De står 15 m fra hverandre, som klubbens lengder 265/250 m,
-  og er rettet langs spillelinja mot midten av fairway.
+  (ca. 775 m²), med formen fra klubbens hulltegning og satellittbildet. Armen
+  peker rett opp hullet, og foten går vestover.
+- **Plassering:** teestedet står på linje med starten av fairway, slik det er
+  bestemt ut fra kjennskap til banen. Det ligger 44,5 m vest for der
+  satellittbildet viser det. Teestedet er skåret inn i roughen og høygresset,
+  høyden følger terrenget, og kanten er skjøtt sømløst. Høygresset rundt
+  utslaget er gjort om til rough i en ring på ca. 4 m, og tustene der er fjernet.
+- **Teemarkører:** gul (bak) står på (−42,7, −9,8), rød på (−45,5, 5,2), 15 m
+  foran. Begge er rettet mot midten av fairway.
 - **Trær:** 14 lidar-trær er fjernet (088, 089, 091–102). De står på åpent
-  gress både på satellittbildet og på tegningen, og tre av dem sto midt i det
-  nye teestedet. Innbakt skygge fra dem i roughens vertex-farger er fjernet.
+  gress både på satellittbildet og på tegningen. Innbakt skygge fra dem i
+  vertex-fargene er fjernet.
 - **Hullskilt og `CAM_Tee`:** flyttet til det nye teestedet.
 - **JSON / index:** `tees`, `stats` og `tee_note` i `byneset_south_09.json` er
   oppdatert. For hull 9 i `byneset_south_index.json` er `glb_MB`, `tris`,
@@ -28,7 +28,7 @@ Filene er eksportert med samme innstillinger som originalene (Blender 5.2):
   teksturer fra `../textures/`
 
 Skriptet `tools/fix_south_09_tee.py` gjenskaper `.blend`-filen fra originalen.
+Posisjonen styres av `SHIFT` i skriptet.
 
 ## Ikke endret
-Green, bunkere, fairway og hullinja. De stemmer med tegningen innenfor noen få
-meter.
+Green, bunkere, fairway og hullinja.

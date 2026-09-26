@@ -122,10 +122,10 @@
    "glb": "Hull 09/byneset_south_09.glb",
    "json": "Hull 09/byneset_south_09.json",
    "gltf_shared": "App (delte teksturer)/holes/byneset_south_09.gltf",
-   "glb_MB": 3.41,
-   "tris": 160726,
-   "elev_change_m": 4.9,
-   "tee_elev_masl": 110.49,
+   "glb_MB": 3.38,
+   "tris": 157867,
+   "elev_change_m": 4.36,
+   "tee_elev_masl": 111.03,
    "tees": 2
   }
  ],
