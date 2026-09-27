@@ -291,6 +291,42 @@
     ]
    ],
    "osm_way": "1270691577"
+  },
+  {
+   "center_blender": [
+    -5.77,
+    36.13,
+    -1.16
+   ],
+   "center_gltf": [
+    -5.774,
+    -1.158,
+    -36.128
+   ],
+   "to_pin_m": 106.6,
+   "outline_blender": [
+    [
+     -10.11,
+     29.99
+    ],
+    [
+     -0.39,
+     30.51
+    ],
+    [
+     -1.2,
+     42.51
+    ],
+    [
+     -11.39,
+     41.74
+    ],
+    [
+     -10.11,
+     29.99
+    ]
+   ],
+   "osm_way": "1270691576"
   }
  ],
  "pin": {
@@ -1803,5 +1839,5 @@
   "Textures: ambientCG, Poly Haven (CC0) + procedural"
  ],
  "routing_note": "South has no hole lines in OSM; tee->green routing drawn by hand on aerial imagery (course player), snapped to OSM greens.",
- "update_note": "2026-09: tee pads replaced by the OpenStreetMap tee outlines (way 1270691577, way 1270691576), cut into the terrain on the Kartverket DTM; 4 lidar trees removed that the aerial image shows as open grass, path or hay."
+ "update_note": "2026-09: tee pads replaced by the OpenStreetMap tee outlines (way 1270691577, way 1270691576), cut into the terrain on the Kartverket DTM; 4 lidar trees removed that the aerial image shows as open grass, path or hay. The forward tee (OSM way 1270691576) was missing from \"tees\" although the club lists two lengths; added."
 }

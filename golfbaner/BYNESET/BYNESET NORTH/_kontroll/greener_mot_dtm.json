@@ -1,0 +1,191 @@
+{
+ "byneset_north_01": {
+  "offset": 0.0,
+  "dtm_relief": 0.124,
+  "model_relief": 0.123,
+  "corr": 1.0,
+  "rms": 0.007
+ },
+ "byneset_north_02": {
+  "offset": -0.0,
+  "dtm_relief": 0.077,
+  "model_relief": 0.077,
+  "corr": 1.0,
+  "rms": 0.004
+ },
+ "byneset_north_03": {
+  "offset": -0.0,
+  "dtm_relief": 0.088,
+  "model_relief": 0.087,
+  "corr": 1.0,
+  "rms": 0.006
+ },
+ "byneset_north_04": {
+  "offset": 0.0,
+  "dtm_relief": 0.097,
+  "model_relief": 0.096,
+  "corr": 1.0,
+  "rms": 0.005
+ },
+ "byneset_north_05": {
+  "offset": -0.0,
+  "dtm_relief": 0.106,
+  "model_relief": 0.106,
+  "corr": 1.0,
+  "rms": 0.007
+ },
+ "byneset_north_06": {
+  "offset": -0.0,
+  "dtm_relief": 0.064,
+  "model_relief": 0.063,
+  "corr": 1.0,
+  "rms": 0.006
+ },
+ "byneset_north_07": {
+  "offset": -0.0,
+  "dtm_relief": 0.159,
+  "model_relief": 0.159,
+  "corr": 1.0,
+  "rms": 0.007
+ },
+ "byneset_north_08": {
+  "offset": -0.0,
+  "dtm_relief": 0.084,
+  "model_relief": 0.083,
+  "corr": 1.0,
+  "rms": 0.006
+ },
+ "byneset_north_09": {
+  "offset": -0.0,
+  "dtm_relief": 0.079,
+  "model_relief": 0.078,
+  "corr": 0.99,
+  "rms": 0.008
+ },
+ "byneset_north_10": {
+  "offset": -0.0,
+  "dtm_relief": 0.098,
+  "model_relief": 0.097,
+  "corr": 1.0,
+  "rms": 0.007
+ },
+ "byneset_north_11": {
+  "offset": 0.0,
+  "dtm_relief": 0.086,
+  "model_relief": 0.085,
+  "corr": 1.0,
+  "rms": 0.007
+ },
+ "byneset_north_12": {
+  "offset": 0.0,
+  "dtm_relief": 0.094,
+  "model_relief": 0.094,
+  "corr": 1.0,
+  "rms": 0.006
+ },
+ "byneset_north_13": {
+  "offset": 0.0,
+  "dtm_relief": 0.084,
+  "model_relief": 0.083,
+  "corr": 1.0,
+  "rms": 0.006
+ },
+ "byneset_north_14": {
+  "offset": -0.0,
+  "dtm_relief": 0.079,
+  "model_relief": 0.078,
+  "corr": 1.0,
+  "rms": 0.006
+ },
+ "byneset_north_15": {
+  "offset": -0.0,
+  "dtm_relief": 0.082,
+  "model_relief": 0.081,
+  "corr": 1.0,
+  "rms": 0.007
+ },
+ "byneset_north_16": {
+  "offset": -0.0,
+  "dtm_relief": 0.105,
+  "model_relief": 0.105,
+  "corr": 1.0,
+  "rms": 0.007
+ },
+ "byneset_north_17": {
+  "offset": -0.0,
+  "dtm_relief": 0.107,
+  "model_relief": 0.107,
+  "corr": 1.0,
+  "rms": 0.007
+ },
+ "byneset_north_18": {
+  "offset": 0.0,
+  "dtm_relief": 0.101,
+  "model_relief": 0.1,
+  "corr": 1.0,
+  "rms": 0.008
+ },
+ "byneset_south_01": {
+  "offset": -0.0,
+  "dtm_relief": 0.076,
+  "model_relief": 0.076,
+  "corr": 1.0,
+  "rms": 0.006
+ },
+ "byneset_south_02": {
+  "offset": 0.0,
+  "dtm_relief": 0.094,
+  "model_relief": 0.093,
+  "corr": 1.0,
+  "rms": 0.007
+ },
+ "byneset_south_03": {
+  "offset": -0.0,
+  "dtm_relief": 0.082,
+  "model_relief": 0.081,
+  "corr": 1.0,
+  "rms": 0.007
+ },
+ "byneset_south_04": {
+  "offset": -0.0,
+  "dtm_relief": 0.138,
+  "model_relief": 0.137,
+  "corr": 1.0,
+  "rms": 0.008
+ },
+ "byneset_south_05": {
+  "offset": 0.0,
+  "dtm_relief": 0.091,
+  "model_relief": 0.091,
+  "corr": 1.0,
+  "rms": 0.006
+ },
+ "byneset_south_06": {
+  "offset": -0.09,
+  "dtm_relief": 0.071,
+  "model_relief": 0.0,
+  "corr": 0.0,
+  "rms": 0.071
+ },
+ "byneset_south_07": {
+  "offset": 0.04,
+  "dtm_relief": 0.095,
+  "model_relief": 0.0,
+  "corr": 0.0,
+  "rms": 0.095
+ },
+ "byneset_south_08": {
+  "offset": 0.02,
+  "dtm_relief": 0.08,
+  "model_relief": 0.0,
+  "corr": 0.0,
+  "rms": 0.08
+ },
+ "byneset_south_09": {
+  "offset": -0.09,
+  "dtm_relief": 0.115,
+  "model_relief": 0.0,
+  "corr": 0.0,
+  "rms": 0.115
+ }
+}

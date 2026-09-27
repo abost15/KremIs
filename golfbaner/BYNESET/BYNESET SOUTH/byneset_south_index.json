@@ -28,7 +28,7 @@
    "tris": 156425,
    "elev_change_m": -15.13,
    "tee_elev_masl": 109.54,
-   "tees": 3
+   "tees": 2
   },
   {
    "hole": 3,
@@ -42,7 +42,7 @@
    "tris": 207303,
    "elev_change_m": 3.91,
    "tee_elev_masl": 95.48,
-   "tees": 2
+   "tees": 1
   },
   {
    "hole": 4,
@@ -70,7 +70,7 @@
    "tris": 223566,
    "elev_change_m": -4.72,
    "tee_elev_masl": 112.81,
-   "tees": 1
+   "tees": 2
   },
   {
    "hole": 6,

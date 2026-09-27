@@ -47,6 +47,18 @@ med parameterne i `tools/params/`. Kilder:
   klubbens hulltegning og satellittbildet viser som åpent gress. Innbakt skygge
   fra trærne er fjernet fra vertex-fargene.
 
+## Rettet i JSON etter kontrollen mot klubbens scorekort
+- **Hull 2:** hadde det delte teestedet til hull 6/9 oppført som sitt tredje tee
+  (285 m mot en bakerste tee på 250 m). Fjernet fra `tees`; nå 2 tees på 245 og
+  225 m mot klubbens 250 og 230.
+- **Hull 5:** det fremre teestedet (OSM way 1270691576) manglet i `tees`, selv om
+  klubben oppgir to lengder. Lagt til; nå 137 og 105 m mot klubbens 132 og 100.
+- **Hull 9:** hadde teestedet til hull 2 oppført som bakerste tee. Fjernet
+  tidligere. Markørene gir nå 263 og 251 m mot klubbens 265 og 250.
+- **Indeksfila:** `tees`-tellingen for hull 2, 3 og 5 stemte ikke med JSON-ene.
+- Det L-formede teestedet deles av hull 6 og 9: hull 6 spiller 239 m (klubb 240)
+  og hull 9 spiller 263 m (klubb 265) fra hver sin del av det.
+
 ## Ikke endret
 - Hull 1 hadde ingenting å rette. Originalfilene fra Drive ligger i `Hull 01` for å ha hele banen samlet.
 - Nordbanen stemmer med OSM og DTM. Trærne der er ikke kontrollert, fordi det
