@@ -48,7 +48,7 @@ med parameterne i `tools/params/`. Kilder:
   fra trærne er fjernet fra vertex-fargene.
 
 ## Ikke endret
-- Hull 1 hadde ingenting å rette.
+- Hull 1 hadde ingenting å rette. Originalfilene fra Drive ligger i `Hull 01` for å ha hele banen samlet.
 - Nordbanen stemmer med OSM og DTM. Trærne der er ikke kontrollert, fordi det
   ikke finnes et satellittbilde for nordbanen i Drive.
 - Fairway og hullinjer: det finnes ingen fairway-data for sørbanen i OSM, og
