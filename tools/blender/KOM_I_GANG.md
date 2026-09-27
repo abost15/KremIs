@@ -90,6 +90,57 @@ peke langs spilleretningen.
 ### Angre
 **Ctrl + Z**. Det virker flere ganger bakover.
 
+## 5b. Klippe gresset om (fairway, semi, rough)
+
+Fairwaykanten er bare en grense mellom to flater. Å flytte den er å klippe noen
+trekanter som en annen gresstype. Trekantene i bakken er 0,3–1 m store, så du kan
+male kanten omtrent hvor du vil.
+
+1. Klikk på flaten du vil klippe **fra** — skal du utvide fairwayen, klikk på
+   `SURF_Rough`.
+2. Trykk **Tab**. Nå er du i Edit-modus.
+3. Trykk **3** (velg flater), og **Alt + Z** så du ser gjennom flaten.
+4. Velg trekantene du vil endre:
+   - **C** gir deg en malepensel. Hold venstre musetast og mal. Rull på hjulet
+     for å endre størrelsen. **Høyreklikk** avslutter penselen.
+   - **B** gir en firkant du drar opp.
+   - **Shift + klikk** legger til eller fjerner én trekant.
+5. I Byneset-panelet, under **Klippe om gresset**, trykk **Fairway** (eller
+   Semi, Rough, Tee).
+6. Trykk **Tab** for å komme ut av Edit-modus og se resultatet.
+
+Ble det for mye? Trykk **Ctrl + Z**, eller klipp flatene tilbake til Rough.
+
+Fremgangsmåten er trygg: ingen punkter flyttes, så det kan ikke bli glipe mellom
+flatene. Teksturskala, farger og lys blir regnet om automatisk.
+
+Vil du ha en jevnere kant enn trekantene gir, si fra — da deler jeg opp
+trekantene i det området først.
+
+## 5c. Bygge et teested
+
+1. **Venstreklikk** midt der puta skal ligge (3D-markøren flytter seg dit).
+   Trykk **7** på talltastaturet først, så ser du rett ovenfra.
+2. Trykk **Bygg teested her** i Byneset-panelet.
+3. Du får en liten boks med mål. Standard er 7 × 17 m, som er vanlig størrelse
+   her (median på anlegget er 164 m²).
+   - **Bredde / Lengde**: målene på puta.
+   - **Retning**: 0 betyr at puta peker mot pinnen. Skriv f.eks. 10 for å vri den
+     10 grader.
+   - **Høyde over terrenget**: 0,148 m er det de andre putene har.
+   - **Voll ut i roughen**: hvor langt ut skråningen går. 2 m er standard.
+4. Trykk **OK**.
+
+Puta blir en helt plan flate med maks 0,5 % fall, som de andre putene på
+anlegget, og terrenget rundt løftes i en voll opp til kanten. Markører, skilt og
+trær som står i vollen blir satt ned på nytt.
+
+Er den feil? **Ctrl + Z** og prøv igjen med andre tall. Du kan gjøre det så mange
+ganger du vil.
+
+Merk: puta legges der du klikker, oppå den bakken som er der. Skal teestedet
+ligge et helt annet sted, flytt også de røde eller gule markørene dit (se 5).
+
 ## 6. Lagre og eksportere
 
 1. **Ctrl + S** lagrer `.blend`-fila.
@@ -100,10 +151,13 @@ de samme innstillingene som originalfilene. Det er disse appen bruker.
 
 ## 7. Dette bør du ikke gjøre uten videre
 
-- **Ikke endre på `SURF_`-flatene** (green, fairway, rough og så videre). De
-  henger sammen kant i kant, har innbakt lys i fargene og egne normaler. Går du
-  inn i Edit-modus der, blir det fort skjøtefeil og mørke flekker. Si fra til
-  meg i stedet, så gjør jeg det med skript.
+- **Ikke flytt eller slett punkter i `SURF_`-flatene.** De henger sammen kant i
+  kant, har innbakt lys i fargene og egne normaler. Flytter du et punkt i
+  Edit-modus, blir det glipe mellom flatene og mørke flekker. Å *klippe om*
+  flater (5b) og å bygge teested (5c) er trygt — de knappene rører ikke
+  punktene sidelengs.
+- **Vær forsiktig med green, forgreen og bunkere.** Klipper du bort flater helt
+  inntil kanten der, kan det bli hull i bakken. Hold deg et par trekanter unna.
 - **Ikke flytt pinnen.** Posisjonen ligger også i `.json`-fila og brukes av
   appen. Verktøyet hopper over pinnen med vilje.
 - **Ikke flytt eller skaler hele scenen.** Da mister modellen koblingen til
@@ -119,7 +173,8 @@ du tilbake. Originalene ligger uansett i Drive og i GitHub.
 
 Si fra hvis du vil ha:
 
-- endringer på green, fairway, rough eller bunkere
+- finere kant enn trekantene gir (jeg deler dem opp først)
+- endringer på greenens fall eller på bunkere
 - flyttet eller nytt teested, siden lengdene i `.json` må regnes om
 - flyttet pinne
 - oppdatert `.json` og `byneset_south_index.json` etter endringer
