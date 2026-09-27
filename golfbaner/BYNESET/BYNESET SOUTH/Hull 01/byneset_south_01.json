@@ -274,6 +274,202 @@
      10.88
     ]
    ]
+  },
+  {
+   "center_blender": [
+    1.5,
+    34.0,
+    -0.065
+   ],
+   "center_gltf": [
+    1.5,
+    -0.065,
+    -34.0
+   ],
+   "to_pin_m": 250.6,
+   "outline_blender": [
+    [
+     5.21,
+     40.38
+    ],
+    [
+     5.0,
+     41.33
+    ],
+    [
+     4.36,
+     42.08
+    ],
+    [
+     3.45,
+     42.42
+    ],
+    [
+     2.46,
+     42.47
+    ],
+    [
+     1.47,
+     42.51
+    ],
+    [
+     0.48,
+     42.54
+    ],
+    [
+     -0.5,
+     42.41
+    ],
+    [
+     -1.29,
+     41.85
+    ],
+    [
+     -1.73,
+     40.97
+    ],
+    [
+     -1.8,
+     39.99
+    ],
+    [
+     -1.84,
+     39.0
+    ],
+    [
+     -1.87,
+     38.01
+    ],
+    [
+     -1.9,
+     37.02
+    ],
+    [
+     -1.93,
+     36.03
+    ],
+    [
+     -1.97,
+     35.04
+    ],
+    [
+     -2.0,
+     34.05
+    ],
+    [
+     -2.03,
+     33.06
+    ],
+    [
+     -2.07,
+     32.07
+    ],
+    [
+     -2.1,
+     31.08
+    ],
+    [
+     -2.13,
+     30.09
+    ],
+    [
+     -2.16,
+     29.1
+    ],
+    [
+     -2.2,
+     28.11
+    ],
+    [
+     -2.16,
+     27.13
+    ],
+    [
+     -1.73,
+     26.25
+    ],
+    [
+     -0.93,
+     25.69
+    ],
+    [
+     0.05,
+     25.54
+    ],
+    [
+     1.04,
+     25.51
+    ],
+    [
+     2.03,
+     25.48
+    ],
+    [
+     3.01,
+     25.47
+    ],
+    [
+     3.93,
+     25.82
+    ],
+    [
+     4.57,
+     26.56
+    ],
+    [
+     4.79,
+     27.52
+    ],
+    [
+     4.82,
+     28.51
+    ],
+    [
+     4.85,
+     29.5
+    ],
+    [
+     4.89,
+     30.49
+    ],
+    [
+     4.92,
+     31.48
+    ],
+    [
+     4.95,
+     32.47
+    ],
+    [
+     4.98,
+     33.45
+    ],
+    [
+     5.02,
+     34.44
+    ],
+    [
+     5.05,
+     35.43
+    ],
+    [
+     5.08,
+     36.42
+    ],
+    [
+     5.12,
+     37.41
+    ],
+    [
+     5.15,
+     38.4
+    ],
+    [
+     5.18,
+     39.39
+    ]
+   ],
+   "note": "front tee, rebuilt 2026-09 around the red markers already in the model"
   }
  ],
  "pin": {
@@ -3370,18 +3566,19 @@
   "TREE_*": "trees (lidar height)"
  },
  "stats": {
-  "glb_MB": 3.22,
-  "glb_plain_MB": 9.18,
+  "glb_MB": 3.26,
+  "glb_plain_MB": 9.19,
   "rendered_tris": 145944,
   "trees": 111,
   "buildings": 2
  },
  "sources": [
-  "Kartverket h\u00f8ydedata NHM DTM/DOM 1 m & 10 m (CC BY 4.0) via WCS",
+  "Kartverket høydedata NHM DTM/DOM 1 m & 10 m (CC BY 4.0) via WCS",
   "OpenStreetMap golf features (ODbL)",
   "Byneset GK hole diagrams + scorecard (bynesetgolf.no)",
   "Esri World Imagery (reference only, not embedded)",
   "Textures: ambientCG, Poly Haven (CC0) + procedural"
  ],
- "routing_note": "South has no hole lines in OSM; tee->green routing drawn by hand on aerial imagery (course player), snapped to OSM greens."
+ "routing_note": "South has no hole lines in OSM; tee->green routing drawn by hand on aerial imagery (course player), snapped to OSM greens.",
+ "update_note": "2026-09: the fairway was extended 309 m2 up to the fringe (it stopped 11.9 m short; all 26 other holes reach 0.0-0.8 m), with a 167 m2 semi-rough edge around it, by re-mowing the existing ground triangles - no vertex was moved, so the seams to green, fringe and bunkers are untouched. The front tee pad was 8 m2 with the red markers standing outside it; it is now a 115 m2 (7 x 17 m) plane at 0.50 % slope, 0.148 m above the Kartverket DTM with a 2 m bank in the rough, matching the other pads on the course (measured: flat planes, 0.2-0.5 % slope, 0.135-0.150 m above the terrain). Front tee measures 250.6 m to the pin against the club's 270 m; the back tee measures 284.0 m against 300 m."
 }

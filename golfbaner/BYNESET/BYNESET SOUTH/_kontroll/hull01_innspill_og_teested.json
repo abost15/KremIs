@@ -1,0 +1,44 @@
+{
+ "hole": "byneset_south_01",
+ "fairway_added_m2": 308.9,
+ "fairway_faces_moved": 693,
+ "semi_faces_moved": 317,
+ "tee_faces_moved": 89,
+ "fairway_gap_to_green_m": 0.77,
+ "tee_front_m2": 115.5,
+ "tee_front_center": [
+  1.5,
+  34.0
+ ],
+ "tee_front_size_m": [
+  7.0,
+  17.0
+ ],
+ "tee_lift_m": 0.148,
+ "tee_bank_m": 2.0,
+ "log": [
+  "gammel fairway 5798 m2, slutter y=267.8, green starter y=279.3, gap 11.9 m",
+  "innspill 418 m2, hvorav 309 m2 er ny fairway, semikant 167 m2",
+  "r\u00f8de mark\u00f8rer i [0.89, 35.13]",
+  "nytt fremre teested 115 m2 i [1.5, 34.0] (7.0 x 17.0 m)",
+  "fairway:",
+  "  flyttet 606 flater fra SURF_Rough til SURF_Fairway",
+  "  flyttet 87 flater fra SURF_Semi til SURF_Fairway",
+  "  regnet om UV p\u00e5 2079 hj\u00f8rner i SURF_Fairway",
+  "semikant:",
+  "  flyttet 317 flater fra SURF_Rough til SURF_Semi",
+  "  regnet om UV p\u00e5 951 hj\u00f8rner i SURF_Semi",
+  "teested:",
+  "  flyttet 89 flater fra SURF_Rough til SURF_Tee",
+  "  regnet om UV p\u00e5 267 hj\u00f8rner i SURF_Tee",
+  "putetoppen: plan med 0.50 % fall, 0.148 m over terrenget i snitt (fylling 0.07\u20130.27 m)",
+  "  SURF_Rough: endret h\u00f8yde p\u00e5 30 punkt",
+  "  SURF_Tee: endret h\u00f8yde p\u00e5 76 punkt",
+  "vollen: endret h\u00f8yde p\u00e5 106 punkt i alt, maks 0.286 m",
+  "regnet om normaler p\u00e5 59 flater i SURF_Rough",
+  "regnet om normaler p\u00e5 103 flater i SURF_Tee",
+  "hevet TREE_Birch_110 0.097 m med vollen",
+  "satte TEE_Marker_red_L ned p\u00e5 putetoppen (0.171 m)",
+  "satte TEE_Marker_red_R ned p\u00e5 putetoppen (0.095 m)"
+ ]
+}

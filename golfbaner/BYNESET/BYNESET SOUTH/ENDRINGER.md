@@ -67,8 +67,34 @@ med parameterne i `tools/params/`. Kilder:
   semi-rough. Sørbanen har uansett ingen fairway-data i OSM å bygge på.
 - Hull 5 har allerede fairway i ringen, i motsetning til de andre par 3-hullene.
 
+## Hull 1 (rettet etter tilbakemelding fra eieren)
+
+Eieren fant to ting i modellen. Begge er kontrollert og rettet:
+
+- **Fairwayen sluttet brått 11,9 m foran greenen.** På de 26 andre hullene går
+  den helt inn (0,0–0,8 m). Innspillet er nå klippet inn til forgreenen: 309 m²
+  ny fairway med en 167 m² semi-kant rundt, med samme innsnevring mot greenen som
+  de andre hullene har. Avstanden fairway–green er nå 0,77 m.
+- **Det fremre teestedet var 8 m²,** og de røde markørene sto utenfor puta.
+  Median for teeputene på anlegget er 164 m². Ny pute: 115 m² (7 × 17 m) rundt
+  markørene, et plan med 0,50 % fall, 0,148 m over DTM, med 2 m voll ut i
+  roughen. Det er slik de andre putene er bygget — de er målt til helt plane
+  flater (ujevnhet 0,000 m) med 0,2–0,5 % fall, 0,135–0,150 m over terrenget.
+  Markørene og bjørka i vollen er satt ned på nytt. Fremre tee måler nå 250,6 m
+  til pinnen mot klubbens 270 m; den bakre måler 284,0 m mot 300 m (klubben
+  måler langs spillelinja).
+
+Endringene er gjort ved å flytte eksisterende flater mellom `SURF_`-objektene —
+altså klippe gresset annerledes — i stedet for å bygge ny geometri. Bakken har
+0,87 m trekanter i området, så omrisset blir like fint som før. Ingen punkt er
+flyttet sidelengs, og de eneste høydene som er endret er teeputa og vollen rundt
+den, der høyden er regnet ut fra én funksjon av posisjonen slik at punkter som
+deles mellom to flater får samme høyde. Kontroll: 0 skjøter med glipe (mot 0 i
+originalen), putetoppen er helt plan (ujevnhet 0,0000 m), og hvert prøvepunkt
+langs innspillet treffer én flate — ingen overlapp mot forgreenen.
+Skript: `tools/h1_fast.py`. Tall: `_kontroll/hull01_innspill_og_teested.json`.
+
 ## Ikke endret
-- Hull 1 hadde ingenting å rette. Originalfilene fra Drive ligger i `Hull 01` for å ha hele banen samlet.
 - Nordbanen stemmer med OSM og DTM. Trærne der er ikke kontrollert, fordi det
   ikke finnes et satellittbilde for nordbanen i Drive.
 - Fairway og hullinjer: det finnes ingen fairway-data for sørbanen i OSM, og
