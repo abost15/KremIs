@@ -34,11 +34,13 @@ Hull 8 og 11 hadde byttet teested med hverandre. Teeputene ligger fortsatt i
 3D-modellen der de skal; det var bare oppføringen i `tees` som var feil.
 
 ## Åpne spørsmål, ikke endret
-- **Fairway rundt par 3-greenene (hull 2, 6, 8, 13):** OSM tegner en fairway-ring
-  rundt greenen, mens modellen har en smal fairway-kant og semi-rough utenfor.
-  Flyfotoet viser at området er klippet kortere enn rough, men ikke om det er
-  fairway- eller semi-høyde. Geometrien er lik; bare klassen er ulik. Se
-  `_kontroll/par3_fairway_spoersmaal.png`. Si fra om ringen skal være fairway.
+- **Fairway rundt par 3-greenene (hull 2, 6, 8, 13): vurdert, beholdt som semi-rough.**
+  OSM tegner en fairway-ring rundt disse greenene, og et skarpt flyfoto viser
+  klippestriper i ringen. Modellen behandler dessuten par 3 annerledes enn
+  resten: i ringen 3–12 m rundt greenen er det 41 % fairway på par 4 og 44 % på
+  par 5, men 6 % på par 3. Geometrien er lik i modell og OSM; bare klassen er
+  ulik, og den avgjør liet. Eieren har vurdert det og valgt å la ringen stå som
+  semi-rough. Se `_kontroll/par3_fairway_spoersmaal.png`.
 - **Hull 4:** har fire teeputer, men den nest bakerste gir 388 m mens klubben
   oppgir 350 m. Den ligger rett på spillelinja, og ingen andre hull passer.
 - **Hull 17 og 18:** nest bakerste tee er henholdsvis 19 og 18 m lengre enn

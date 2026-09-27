@@ -59,6 +59,14 @@ med parameterne i `tools/params/`. Kilder:
 - Det L-formede teestedet deles av hull 6 og 9: hull 6 spiller 239 m (klubb 240)
   og hull 9 spiller 263 m (klubb 265) fra hver sin del av det.
 
+## Vurdert, men bevisst ikke endret
+- **Fairway rundt par 3-greenene (hull 3, 7, 8):** modellen har semi-rough i
+  ringen rundt greenen, mens den har fairway der på par 4 og 5 (41 % mot 6 % i
+  ringen 3–12 m ut). Samme spørsmål ble vurdert på nordbanen, der OSM og et
+  skarpt flyfoto viser at ringen er klippet. Eieren har valgt å la den stå som
+  semi-rough. Sørbanen har uansett ingen fairway-data i OSM å bygge på.
+- Hull 5 har allerede fairway i ringen, i motsetning til de andre par 3-hullene.
+
 ## Ikke endret
 - Hull 1 hadde ingenting å rette. Originalfilene fra Drive ligger i `Hull 01` for å ha hele banen samlet.
 - Nordbanen stemmer med OSM og DTM. Trærne der er ikke kontrollert, fordi det
